@@ -34,7 +34,7 @@ const Login = () => {
         password: "",
       });
       currLogin(user);
-      navigate("/prize-wheel");
+      // navigate("/");
     }
   }
 
@@ -61,7 +61,7 @@ const Login = () => {
     );
     if (existUser) {
       currLogin(existUser);
-      navigate("/prize-wheel");
+      // navigate("/");
     } else {
       alert("User does not exist");
     }
@@ -72,70 +72,80 @@ const Login = () => {
   }
 
   return (
-    <div className='component-container'>
-      <h1>{hasAccount ? "Login Form" : "Registration Form"}</h1>
-      <form className='registration-form'
-        onSubmit={handleSubmit}
-        style={{ display: hasAccount ? 'none' : 'grid' }}
-      >
+    <>
+      <h2>{hasAccount ? "Sign in to Team Up" : "Create an Account"}</h2>
+      <div className='component-container'>
+        <form className='registration-form'
+          onSubmit={handleSubmit}
+          style={{ display: hasAccount ? 'none' : 'grid' }}
+        >
 
-        <label htmlFor='name'>Name: </label>
-        <input type='text'
-          id='name'
-          className='name'
-          name='name'
-          value={user.name}
-          onChange={handleRegistrationInputChange} />
+          <label htmlFor='firstName'>First Name: </label>
+          <input type='text'
+            id='firstName'
+            className='firstName'
+            name='firstName'
+            value={user.firstName}
+            onChange={handleRegistrationInputChange} />
 
-        <label htmlFor='email'>Email: </label>
-        <input type='email'
-          id='email'
-          className='email'
-          name='email'
-          value={user.email}
-          onChange={handleRegistrationInputChange} />
+          <label htmlFor='lastName'>Last Name: </label>
+          <input type='text'
+            id='lastName'
+            className='lastName'
+            name='lastName'
+            value={user.lastName}
+            onChange={handleRegistrationInputChange} />
 
-        <label htmlFor='password'>Password: </label>
-        <input type='password'
-          id='password'
-          className='password'
-          name='password'
-          value={user.password}
-          onChange={handleRegistrationInputChange} />
+          <label htmlFor='email'>Email: </label>
+          <input type='email'
+            id='email'
+            className='email'
+            name='email'
+            value={user.email}
+            onChange={handleRegistrationInputChange} />
 
-        <button type='submit' className='btn'>Submit</button>
-      </form>
+          <label htmlFor='password'>Password: </label>
+          <input type='password'
+            id='password'
+            className='password'
+            name='password'
+            value={user.password}
+            onChange={handleRegistrationInputChange} />
 
-      <form className='login-form'
-        onSubmit={handleLogin}
-        style={{ display: hasAccount ? 'grid' : 'none' }}
-      >
+          <button type='submit' className='btn'>Submit</button>
+        </form>
 
-        <label htmlFor='userName'>Name: </label>
-        <input type='text'
-          id='userName'
-          className='userName'
-          name='userName'
-          value={storedUser.userName}
-          onChange={handleLoginInputChange} />
+        <form className='login-form'
+          onSubmit={handleLogin}
+          style={{ display: hasAccount ? 'grid' : 'none' }}
+        >
 
-        <label htmlFor='userPassword'>Password: </label>
-        <input type='password'
-          id='userPassword'
-          className='userPassword'
-          name='userPassword'
-          value={storedUser.userPassword}
-          onChange={handleLoginInputChange} />
+          <label htmlFor='userName'>User Name: </label>
+          <input type='text'
+            id='userName'
+            className='userName'
+            name='userName'
+            value={storedUser.userName}
+            onChange={handleLoginInputChange} />
 
-        <button type='submit' className='btn'>Login</button>
-      </form>
+          <label htmlFor='userPassword'>Password: </label>
+          <input type='password'
+            id='userPassword'
+            className='userPassword'
+            name='userPassword'
+            value={storedUser.userPassword}
+            onChange={handleLoginInputChange} />
 
-      <button className='switch-btn'
-        onClick={handleSwitch}
-      >
-        {hasAccount ? "Registration" : "Login"}
-      </button>
-    </div>
+          <button type='submit' className='btn'>Login</button>
+        </form>
+
+        <button className='switch-btn'
+          onClick={handleSwitch}
+        >
+          {hasAccount ? "Registration" : "Login"}
+        </button>
+      </div>
+    </>
   );
 };
 
