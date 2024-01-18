@@ -137,18 +137,18 @@ const Login = () => {
             value={storedUser.userPassword}
             onChange={handleLoginInputChange} />
 
-          <button type='submit' className='btn'>Login</button>
+          <Button text="Sign in" buttonStyle="blue-btn" />
         </form>
 
         <div className='switch-btn-container'>
           <p>
-            {hasAccount ? "" : "Not a member yet?"}
+            {hasAccount ? "Not a member yet?" : "Already have an account?"}
           </p>
 
           <button className='switch-btn'
             onClick={handleSwitch}
           >
-            {hasAccount ? "Registration" : "Create an account"}
+            {hasAccount ? "Create an account" : "Sign in"}
           </button>
         </div>
       </div>

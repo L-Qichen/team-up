@@ -55,21 +55,20 @@ input:focus{
   border: transparent;
   letter-spacing: 1px;
   font-size: 16px;
-  transition: 0.5s ease-in-out all;
+  transition: 0.3s ease-in-out all;
   text-transform: capitalize;
+  border-bottom: 1px solid transparent;
 }
 .switch-btn:hover{
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-  0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  border-bottom: 5px solid #2094f3;
+  border-bottom: 1px solid #2094f3;
 }
 
 .switch-btn-container{
-  border: 1px solid red;
   display: flex;
-  gap: 1rem;
+  gap: .5rem;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
   > p{
     font-size: 16px;
     letter-spacing: 1px;
