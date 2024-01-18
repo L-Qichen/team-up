@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { currentUserContext } from '../App'
+import { Button } from '../components';
 import '../assets/css/Login.css'
 
 const Login = () => {
@@ -112,7 +113,7 @@ const Login = () => {
             value={user.password}
             onChange={handleRegistrationInputChange} />
 
-          <button type='submit' className='btn'>Submit</button>
+          <Button text="continue" buttonStyle="green-btn" />
         </form>
 
         <form className='login-form'
@@ -139,11 +140,17 @@ const Login = () => {
           <button type='submit' className='btn'>Login</button>
         </form>
 
-        <button className='switch-btn'
-          onClick={handleSwitch}
-        >
-          {hasAccount ? "Registration" : "Login"}
-        </button>
+        <div className='switch-btn-container'>
+          <p>
+            {hasAccount ? "" : "Not a member yet?"}
+          </p>
+
+          <button className='switch-btn'
+            onClick={handleSwitch}
+          >
+            {hasAccount ? "Registration" : "Create an account"}
+          </button>
+        </div>
       </div>
     </>
   );
