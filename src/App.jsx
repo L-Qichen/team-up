@@ -3,17 +3,19 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import {
-  Login
+  Login,
+  Home
 } from './pages'
 import { createContext, useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css's
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Login />,
+  },
+  {
+    path: '/home',
+    element: <Home />,
   },
 ]);
 
