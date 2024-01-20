@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Home', 'User', 'Forum'];
+const pages = ['Home', 'Project Listing', 'Forum'];
 const settings = ['Profile', 'My Projects', 'Logout'];
 
 const Header = () => {
@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container
         maxWidth="xl"
         sx={{
