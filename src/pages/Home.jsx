@@ -1,5 +1,4 @@
-import { Height } from '@mui/icons-material';
-import { Header } from '../components'
+import { Header, Footer } from '../components'
 
 const Home = () => {
 
@@ -7,6 +6,7 @@ const Home = () => {
     <>
       <Header />
       <div style={{ height: '1000px', border: '1px solid red' }}>11</div >
+      <Footer />
     </>
   );
 }
