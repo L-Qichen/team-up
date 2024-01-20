@@ -14,14 +14,3 @@ body{
   background: #ffffff;
   color: #333333;
 }
-/* .container{
-  width: 45vw;
-  min-width: 450px;
-  margin: 3.5rem auto;
-  position: relative;
-  border: 1px solid red;
-} */
-h1{
-  margin: 1rem auto;
-  text-align: center;
-}
