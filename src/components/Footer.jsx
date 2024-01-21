@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import '../assets/css/Footer.css'
 
 const Footer = () => {
 
@@ -8,7 +9,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        py: 3,
+        py: 2,
         px: 2,
         mt: 'auto',
         background: '#001f3f',
@@ -22,7 +23,7 @@ const Footer = () => {
           {' All Rights Reserved. Designed by Toby.'}
         </Typography>
       </Container>
-    </Box>
+    </Box >
   );
 }
 
