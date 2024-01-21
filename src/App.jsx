@@ -4,7 +4,8 @@ import {
 } from "react-router-dom";
 import {
   Login,
-  Home
+  Home,
+  MyProjects
 } from './pages'
 import { createContext, useState } from 'react'
 
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: '/home',
     element: <Home />,
+  },
+  {
+    path: '/my-projects',
+    element: <MyProjects />,
   },
 ]);
 
