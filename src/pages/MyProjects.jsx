@@ -2,11 +2,18 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { Header, Footer } from '../components'
+import '../assets/css/CommonStyle.css'
 
 const MyProjects = () => {
   return (
     <>
       <Header />
+      <Container maxWidth="md">
+        <h1 className='title'>
+          My Projects
+        </h1>
+        <div className='break-line' />
+      </Container>
       <Container maxWidth="md">
         <Box>
           <Typography variant="h4"
