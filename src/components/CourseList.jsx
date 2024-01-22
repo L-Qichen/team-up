@@ -23,7 +23,16 @@ const CourseList = () => {
         >
           <Grid container wrap="nowrap" spacing={3}>
             <Grid item>
-              <Avatar>W</Avatar>
+              <Avatar
+                sx={{
+                  background: '#00796b',
+                  width: '64px',
+                  height: '64px',
+                }}
+                variant='square'
+              >
+                R
+              </Avatar>
             </Grid>
             <Grid item xs zeroMinWidth>
               <Typography noWrap>
@@ -44,7 +53,16 @@ const CourseList = () => {
         >
           <Grid container wrap="nowrap" spacing={3}>
             <Grid item>
-              <Avatar>W</Avatar>
+              <Avatar
+                sx={{
+                  background: '#00796b',
+                  width: '64px',
+                  height: '64px',
+                }}
+                variant='square'
+              >
+                R
+              </Avatar>
             </Grid>
             <Grid item xs zeroMinWidth>
               <Typography noWrap>
@@ -65,7 +83,16 @@ const CourseList = () => {
         >
           <Grid container wrap="nowrap" spacing={3}>
             <Grid item>
-              <Avatar>W</Avatar>
+              <Avatar
+                sx={{
+                  background: '#00796b',
+                  width: '64px',
+                  height: '64px',
+                }}
+                variant='square'
+              >
+                R
+              </Avatar>
             </Grid>
             <Grid item xs zeroMinWidth>
               <Typography noWrap>
@@ -86,7 +113,16 @@ const CourseList = () => {
         >
           <Grid container wrap="nowrap" spacing={3}>
             <Grid item>
-              <Avatar>W</Avatar>
+              <Avatar
+                sx={{
+                  background: '#00796b',
+                  width: '64px',
+                  height: '64px',
+                }}
+                variant='square'
+              >
+                R
+              </Avatar>
             </Grid>
             <Grid item xs zeroMinWidth>
               <Typography noWrap>
@@ -107,7 +143,16 @@ const CourseList = () => {
         >
           <Grid container wrap="nowrap" spacing={3}>
             <Grid item>
-              <Avatar>W</Avatar>
+              <Avatar
+                sx={{
+                  background: '#00796b',
+                  width: '64px',
+                  height: '64px',
+                }}
+                variant='square'
+              >
+                R
+              </Avatar>
             </Grid>
             <Grid item xs zeroMinWidth>
               <Typography noWrap>
