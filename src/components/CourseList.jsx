@@ -41,6 +41,7 @@ const CourseList = () => {
             </Grid>
           </Grid>
         </Paper>
+
         <Paper
           className='paper-container'
           elevation={0}
@@ -161,6 +162,7 @@ const CourseList = () => {
             </Grid>
           </Grid>
         </Paper>
+
       </Box>
     </>
   );
