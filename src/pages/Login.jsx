@@ -1,8 +1,23 @@
 import { useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 import { currentUserContext } from '../App'
 import { Button } from '../components';
+import { customFetch } from '../utils';
 import '../assets/css/Login.css'
+
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  console.log(formData);
+  const data = Object.fromEntries(formData);
+  try {
+    const response = await customFetch.post('/login', data);
+    return redirect('/');
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
 
 const Login = () => {
   const { currentUser, currLogin } = useContext(currentUserContext);
@@ -19,26 +34,6 @@ const Login = () => {
     userPassword: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (user.name == "" || user.email == "" || user.password == "") {
-      alert("Please insert All three fields.");
-    } else {
-      const userList = JSON.parse(localStorage.getItem("userList")) || [];
-      userList.push(user);
-      localStorage.setItem("userList", JSON.stringify(userList));
-      const users = localStorage.getItem("userList");
-      console.log(users);
-      setUser({
-        name: "",
-        email: "",
-        password: "",
-      });
-      currLogin(user);
-      // navigate("/");
-    }
-  }
-
   const handleRegistrationInputChange = (e) => {
     setUser({
       ...user,
@@ -53,31 +48,20 @@ const Login = () => {
     })
   }
 
-  const handleLogin = () => {
-    const userList = JSON.parse(localStorage.getItem("userList")) || [];
-    const existUser = userList.find(
-      (element) => {
-        return element.name === storedUser.userName && element.password === storedUser.userPassword;
-      }
-    );
-    if (existUser) {
-      currLogin(existUser);
-      // navigate("/");
-    } else {
-      alert("User does not exist");
-    }
-  }
-
   const handleSwitch = () => {
     setHasAccount(!hasAccount);
+  }
+
+  const handleLogin = (event) => {
+    action(storedUser);
   }
 
   return (
     <>
       <h2>{hasAccount ? "Sign in to Team Up" : "Create an Account"}</h2>
       <div className='component-container'>
-        <form className='registration-form'
-          onSubmit={handleSubmit}
+        <Form className='registration-form'
+          method='post'
           style={{ display: hasAccount ? 'none' : 'grid' }}
         >
 
@@ -114,9 +98,10 @@ const Login = () => {
             onChange={handleRegistrationInputChange} />
 
           <Button text="continue" buttonStyle="green-btn" />
-        </form>
+        </Form>
 
-        <form className='login-form'
+        <Form className='login-form'
+          method='post'
           onSubmit={handleLogin}
           style={{ display: hasAccount ? 'grid' : 'none' }}
         >
@@ -138,7 +123,7 @@ const Login = () => {
             onChange={handleLoginInputChange} />
 
           <Button text="Sign in" buttonStyle="blue-btn" />
-        </form>
+        </Form>
 
         <div className='switch-btn-container'>
           <p>

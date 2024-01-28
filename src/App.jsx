@@ -8,11 +8,13 @@ import {
   MyProjects
 } from './pages'
 import { createContext, useState } from 'react'
+import { action as loginAction } from './pages/Login';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Login />,
+    action: loginAction,
   },
   {
     path: '/home',
