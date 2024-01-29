@@ -1,12 +1,23 @@
 import Container from '@mui/material/Container';
-import { Header, Footer, CourseList } from '../components'
+import { Header, Footer, CourseList, AddProjectDialog } from '../components'
 import Paper from '@mui/material/Paper';
 import AddIcon from '@mui/icons-material/Add';
 import IconButton from '@mui/material/IconButton';
 import '../assets/css/CommonStyle.css'
 import '../assets/css/MyProjects.css'
+import { useState } from 'react';
 
 const MyProjects = () => {
+  const [opnDialogName, setOpenDialogName] = useState(null);
+
+  const closeDialog = () => {
+    setOpenDialogName(null);
+  };
+
+  const openAddProjectDialog = () => {
+    setOpenDialogName('AddProject');
+  }
+
   return (
     <>
       <Header />
@@ -29,14 +40,16 @@ const MyProjects = () => {
             textAlign: 'center',
           }}
         >
-          <IconButton type="submit"
+          <IconButton type="button"
             sx={{
               color: '#4caf50',
             }}
             className='addIcon-container'
+            onClick={openAddProjectDialog}
           >
             <AddIcon sx={{ width: '64px', height: '64px' }} />
           </IconButton>
+          <AddProjectDialog open={opnDialogName === 'AddProject'} onClose={closeDialog} />
         </Paper>
 
       </Container>
