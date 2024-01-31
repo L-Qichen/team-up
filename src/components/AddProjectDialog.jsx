@@ -6,6 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Button } from '.'
+import '../assets/css/Button.css'
 
 const AddProjectDialog = ({ open, onClose }) => {
 
@@ -20,8 +21,7 @@ const AddProjectDialog = ({ open, onClose }) => {
             event.preventDefault();
             const formData = new FormData(event.currentTarget);
             const formJson = Object.fromEntries(formData.entries());
-            const email = formJson.email;
-            console.log(email);
+            console.log(formJson);
             onClose();
           },
         }}
@@ -34,18 +34,62 @@ const AddProjectDialog = ({ open, onClose }) => {
           <TextField
             autoFocus
             required
-            margin="dense"
-            id="name"
+            margin="normal"
+            id="outlined-required"
+            name="Project Name"
+            label="Project Name"
+            type="text"
+            fullWidth
+          />
+          <TextField
+            required
+            margin="normal"
+            id="outlined-required"
+            name="Description"
+            label="Description"
+            type="text"
+            fullWidth
+          />
+          <TextField
+            required
+            margin="normal"
+            id="outlined-required"
+            name="Requirement"
+            label="Requirement"
+            type="text"
+            fullWidth
+          />
+          <TextField
+            required
+            margin="normal"
+            id="outlined-required"
             name="email"
             label="Email Address"
             type="email"
             fullWidth
-            variant="standard"
+          />
+          <TextField
+            margin="normal"
+            id="outlined-required"
+            name="Max Number of Student"
+            label="Max Number of Student"
+            type="number"
+            fullWidth
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={onClose}>Cancel</Button>
-          <Button type="submit">Subscribe</Button>
+          <button
+            className="btn green-btn"
+            type="button"
+            onClick={onClose}
+          >
+            Cancel
+          </button>
+          <Button
+            text="Subscribe"
+            buttonStyle="blue-btn"
+            type="submit"
+          />
         </DialogActions>
       </Dialog>
     </>
