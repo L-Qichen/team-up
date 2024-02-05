@@ -7,10 +7,12 @@ import '../assets/css/Login.css'
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
-  console.log(formData);
-  const data = Object.fromEntries(formData);
+  // must send JSON object here
+  // otherwise request will send twice(POST + OPTION)
+  const data = JSON.stringify(Object.fromEntries(formData));
+  console.log(data);
   try {
-    const response = await customFetch.post('/login', data);
+    const response = await customFetch.post('/user/login', data);
     return redirect('/');
   } catch (error) {
     console.log(error);
@@ -52,9 +54,9 @@ const Login = () => {
     setHasAccount(!hasAccount);
   }
 
-  const handleLogin = (event) => {
-    action(storedUser);
-  }
+  // const handleLogin = (event) => {
+  //   action(storedUser);
+  // }
 
   return (
     <>
@@ -102,7 +104,6 @@ const Login = () => {
 
         <Form className='login-form'
           method='post'
-          onSubmit={handleLogin}
           style={{ display: hasAccount ? 'grid' : 'none' }}
         >
 
