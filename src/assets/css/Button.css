@@ -31,3 +31,10 @@
 .blue-btn:hover{
   background: #001f3f;
 }
+
+.yellow-btn{
+  background: #ff9800;
+}
+.yellow-btn:hover{
+  background: #ff7300;
+}

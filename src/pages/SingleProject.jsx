@@ -1,9 +1,10 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import { Header, Footer } from '../components'
+import { Header, Footer, Button } from '../components'
 
 const SingleProject = () => {
   const status = "project status";
@@ -18,13 +19,20 @@ const SingleProject = () => {
           <h1 className='sp-title'>
             Single Project
           </h1>
-          <Stack direction="column"
-            spacing={1}
-            alignItems="flex-start"
-          >
-            <Chip label={status} sx={{ background: '#4caf50', color: "#fff" }} />
-            <Chip label={`${membersRate} members`} sx={{ background: '#2094f3', color: "#fff" }} />
-          </Stack>
+          <Grid container>
+            <Grid item xs={10} md={11}>
+              <Stack direction="column"
+                spacing={1}
+                alignItems="flex-start"
+              >
+                <Chip label={status} sx={{ background: '#4caf50', color: "#fff" }} />
+                <Chip label={`${membersRate} members`} sx={{ background: '#2094f3', color: "#fff" }} />
+              </Stack>
+            </Grid>
+            <Grid item xs={2} md={1}>
+              <Button text="Enroll" buttonStyle="yellow-btn" />
+            </Grid>
+          </Grid>
         </Box>
         <div className='break-line' />
       </Container>
