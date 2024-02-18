@@ -6,7 +6,8 @@ import {
   Login,
   Home,
   MyProjects,
-  SingleProject
+  SingleProject,
+  ProjectList
 } from './pages'
 import { createContext, useState } from 'react'
 import { action as loginAction } from './pages/Login';
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: '/single-project',
     element: <SingleProject />,
+  },
+  {
+    path: '/project-list',
+    element: <ProjectList />,
   },
 ]);
 
