@@ -5,9 +5,21 @@ import AddIcon from '@mui/icons-material/Add';
 import IconButton from '@mui/material/IconButton';
 import '../assets/css/CommonStyle.css'
 import '../assets/css/MyProjects.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const MyProjects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    setProjects([
+      { id: 1, projectName: 'Radar System for Indoor Health Monitoring (A)' },
+      { id: 2, projectName: 'Radar System for Indoor Health Monitoring (B)' },
+      { id: 3, projectName: 'Radar System for Indoor Health Monitoring (C)' },
+      { id: 4, projectName: 'Radar System for Indoor Health Monitoring (D)' },
+      { id: 5, projectName: 'Radar System for Indoor Health Monitoring (E)' },
+    ]);
+  }, []);
+
   const [opnDialogName, setOpenDialogName] = useState(null);
 
   const closeDialog = () => {
@@ -29,7 +41,7 @@ const MyProjects = () => {
       </Container>
 
       <Container maxWidth="md">
-        <CourseList />
+        <CourseList projects={projects} />
 
         <Paper
           elevation={0}

@@ -7,14 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import '../assets/css/CourseList.css'
 
-const CourseList = () => {
-  const [projects, setProjects] = useState([
-    { id: 1, projectName: 'Radar System for Indoor Health Monitoring (A)' },
-    { id: 2, projectName: 'Radar System for Indoor Health Monitoring (B)' },
-    { id: 3, projectName: 'Radar System for Indoor Health Monitoring (C)' },
-    { id: 4, projectName: 'Radar System for Indoor Health Monitoring (D)' },
-    { id: 5, projectName: 'Radar System for Indoor Health Monitoring (E)' },
-  ]);
+const CourseList = ({ projects }) => {
 
   return (
     <>
