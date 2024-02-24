@@ -7,7 +7,8 @@ import {
   Home,
   MyProjects,
   SingleProject,
-  ProjectList
+  ProjectList,
+  Profile
 } from './pages'
 import { createContext, useState } from 'react'
 import { action as loginAction } from './pages/Login';
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: '/project-list',
     element: <ProjectList />,
+  },
+  {
+    path: '/profile',
+    element: <Profile />,
   },
 ]);
 
