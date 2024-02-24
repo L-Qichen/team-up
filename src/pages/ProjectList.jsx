@@ -8,21 +8,17 @@ const ProjectList = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // const fetchProjectList = async () => {
-    //   try {
-    //     const response = await customFetch.get('/project/projectList');
-    //   } catch (error) {
-    //     console.error('Error fetching project list:', error);
-    //   }
-    // };
-    // fetchProjectList();
-    setProjects([
-      { id: 1, projectName: 'First Project (A)' },
-      { id: 2, projectName: 'One Project (B)' },
-      { id: 3, projectName: 'Some Project (C)' },
-      { id: 4, projectName: 'AN Project (D)' },
-      { id: 5, projectName: 'Another Project (E)' },
-    ]);
+    const fetchProjectList = async () => {
+      try {
+        const response = await customFetch.get('/project/getProject');
+        // const projectList = JSON.stringify(response.data);
+        const projectList = response.data;
+        setProjects([projectList]);
+      } catch (error) {
+        console.error('Error fetching project list:', error);
+      }
+    };
+    fetchProjectList();
   }, []);
 
   return (
