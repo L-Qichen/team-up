@@ -8,11 +8,13 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import EditUserInfoDialog from './EditUserInfoDialog';
 
 const UserDetails = () => {
 
   const [user, setUser] = useState({
-    fullName: 'FirstName LastName',
+    firstName: 'FirstName',
+    lastName: 'LastName',
     username: 'Toby',
     userRole: 'student',
     email: '10442734856@gmail.com'
@@ -54,14 +56,27 @@ const UserDetails = () => {
             <Grid container alignItems="center">
               <Grid item xs={3} md={2}>
                 <Typography>
-                  Full Name:
+                  First Name:
                 </Typography>
               </Grid>
               <Grid item xs={9} md={10}
                 sx={{ color: '#666' }}
               >
                 <Typography>
-                  {user.fullName}
+                  {user.firstName}
+                </Typography>
+              </Grid>
+
+              <Grid item xs={3} md={2}>
+                <Typography>
+                  Last Name:
+                </Typography>
+              </Grid>
+              <Grid item xs={9} md={10}
+                sx={{ color: '#666' }}
+              >
+                <Typography>
+                  {user.lastName}
                 </Typography>
               </Grid>
 
@@ -115,6 +130,7 @@ const UserDetails = () => {
                 >
                   Edit
                 </button>
+                <EditUserInfoDialog open={opnDialogName === 'UserInfo'} onClose={closeDialog} user={user} />
               </Grid>
             </Grid>
           </AccordionActions>
