@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Header, Footer, UserDetails, CheckBoxAccordion } from '../components'
+import {
+  Header,
+  Footer,
+  UserDetails,
+  CheckBoxAccordion,
+  EnrolledProjectAccordion
+} from '../components'
 import Container from '@mui/material/Container';
 import '../assets/css/CommonStyle.css'
 
@@ -26,12 +32,7 @@ const Profile = () => {
 
       <CheckBoxAccordion title='Leaded Projects' user={user} />
 
-      <Container maxWidth="md">
-        <h2 className='title'>
-          Enrolled Projects
-        </h2>
-        <div className='break-line' />
-      </Container>
+      <EnrolledProjectAccordion title='Enrolled Projects' user={user} />
       <Footer />
     </>
   );
