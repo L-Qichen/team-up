@@ -10,15 +10,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import EditUserInfoDialog from './EditUserInfoDialog';
 
-const UserDetails = () => {
-
-  const [user, setUser] = useState({
-    firstName: 'FirstName',
-    lastName: 'LastName',
-    username: 'Toby',
-    userRole: 'student',
-    email: '10442734856@gmail.com'
-  });
+const UserDetails = ({ user }) => {
 
   const [opnDialogName, setOpenDialogName] = useState(null);
 

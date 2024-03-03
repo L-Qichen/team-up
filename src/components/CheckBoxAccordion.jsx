@@ -16,14 +16,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Checkbox from '@mui/material/Checkbox';
 import Avatar from '@mui/material/Avatar';
 
-const CheckBoxAccordion = ({ title }) => {
-  const [user, setUser] = useState({
-    firstName: 'FirstName',
-    lastName: 'LastName',
-    username: 'Toby',
-    userRole: 'student',
-    email: '10442734856@gmail.com'
-  });
+const CheckBoxAccordion = ({ title, user }) => {
 
   const [checked, setChecked] = useState([]);
 
