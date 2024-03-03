@@ -1,4 +1,4 @@
-import { Header, Footer, UserDetails } from '../components'
+import { Header, Footer, UserDetails, CheckBoxAccordion } from '../components'
 import Container from '@mui/material/Container';
 import '../assets/css/CommonStyle.css'
 
@@ -16,12 +16,7 @@ const Profile = () => {
 
       <UserDetails />
 
-      <Container maxWidth="md">
-        <h2 className='title'>
-          Leaded Projects
-        </h2>
-        <div className='break-line' />
-      </Container>
+      <CheckBoxAccordion title='Leaded Projects' />
 
       <Container maxWidth="md">
         <h2 className='title'>
