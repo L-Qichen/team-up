@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+// import { switchMap } from 'rxjs/operators';
 import { customFetch } from '../utils';
 import Container from '@mui/material/Container';
 import '../assets/css/CommonStyle.css'
@@ -29,8 +30,9 @@ const CheckBoxAccordion = ({ title, user }) => {
   useEffect(() => {
     const fetchLeadedProjects = async () => {
       try {
-        const response = await customFetch.get(`project/getAllLeadedProject?userId=${user.userId}`);
-        setProjects(response.data);
+        const leadedProjectList = await customFetch.get(`project/getAllLeadedProject?userId=${user.userId}`);
+        // const
+        // setProjects(response.data);
       } catch (error) {
         console.error('Error fetching leaded projects:', error);
       }

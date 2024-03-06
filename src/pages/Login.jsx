@@ -32,8 +32,8 @@ const Login = () => {
   });
   const [hasAccount, setHasAccount] = useState(false);
   const [storedUser, setStoredUser] = useState({
-    userName: "",
-    userPassword: "",
+    user_name: "",
+    password: "",
   });
 
   const handleRegistrationInputChange = (e) => {
@@ -107,20 +107,20 @@ const Login = () => {
           style={{ display: hasAccount ? 'grid' : 'none' }}
         >
 
-          <label htmlFor='userName'>User Name: </label>
+          <label htmlFor='user_name'>User Name: </label>
           <input type='text'
-            id='userName'
+            id='user_name'
             className='userName'
-            name='userName'
-            value={storedUser.userName}
+            name='user_name'
+            value={storedUser.user_name}
             onChange={handleLoginInputChange} />
 
-          <label htmlFor='userPassword'>Password: </label>
+          <label htmlFor='password'>Password: </label>
           <input type='password'
-            id='userPassword'
+            id='password'
             className='userPassword'
-            name='userPassword'
-            value={storedUser.userPassword}
+            name='password'
+            value={storedUser.password}
             onChange={handleLoginInputChange} />
 
           <Button text="Sign in" buttonStyle="blue-btn" />
